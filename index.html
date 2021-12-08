@@ -7,13 +7,16 @@
     <h1>Guess the Number</h1>
     <script>
         let num = Math.floor(Math.random() * 11);
-
+        let gotIt = false;
         let guess = prompt("Guess a number between 1 and 10");
-        
+
+        while(gotIt == false){
         if(num == guess){
             alert("You Got It!!");
+            gotIt = true;
         }else{
-            alert("Try Again:(");
+            guess = prompt("Try Again :(");
+             }
         }
 
         alert(num);
