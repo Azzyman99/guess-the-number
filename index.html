@@ -1,44 +1,49 @@
 <html>
-<head>
+  <head>
     <title>Guess the Number</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Guess the Number</h1>
     <script>
-        let num = Math.floor(Math.random() * 11);
-        let gotIt = false;
-        let counter = 0;
-        
+      let num = Math.floor(Math.random() * 11);
+      let gotIt = false;
+      let counter = 0;
 
-            while(gotIt == false){
-                counter++;
-                let guess = prompt ("Guess a number between 1 and 10");
+      while (gotIt == false) {
+        counter++;
+        let guess = prompt("Guess a number between 1 and 10");
 
-                if(num == guess){
-                    alert("got it");
-                    gotIt = true;
-                    
-                }else if (num > guess){
-                    alert("higher");
+        if (num == guess) {
+          alert("got it");
+          gotIt = true;
+        } else if (num > guess) {
+          alert("higher");
+        } else if (num < guess) {
+          alert("Lower");
+        } else {
+          alert("That's incorrect. Guess again");
+        }
+      }
 
-                }else if(num < guess){
-                    alert("Lower");
+      if (gotIt == true) {
+        alert(
+          "Congratulations! you guessed the correct number, which was" +
+            " " +
+            num +
+            " " +
+            "and it took" +
+            " " +
+            counter +
+            " " +
+            "guesses"
+        );
+      } else if (gotIt == false) {
+        alert("Try again");
+      }
 
-                }else{
-                    alert("That's incorrect. Guess again");
-                } 
-                }
-            
-            if (gotIt == true){
-                alert("Congratulations! you guessed the correct number, which was" + " "+ num +" "+"and it took"+ " "+ counter + " "+
-                "guesses");
-            }else if(gotIt ==false){
-                alert("Try again");
-            }
-
-        alert(num);
-        //alert("is this working?");
+      alert(num);
+      //alert("is this working?");
     </script>
-</body>
+  </body>
 </html>
