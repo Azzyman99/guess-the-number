@@ -8,16 +8,34 @@
     <script>
         let num = Math.floor(Math.random() * 11);
         let gotIt = false;
-        let guess = prompt("Guess a number between 1 and 10");
+        let counter = 0;
+        
 
-        while(gotIt == false){
-        if(num == guess){
-            alert("You Got It!!");
-            gotIt = true;
-        }else{
-            guess = prompt("Try Again :(");
-             }
-        }
+            while(gotIt == false){
+                counter++;
+                let guess = prompt ("Guess a number between 1 and 10");
+
+                if(num == guess){
+                    alert("got it");
+                    gotIt = true;
+                    
+                }else if (num > guess){
+                    alert("higher");
+
+                }else if(num < guess){
+                    alert("Lower");
+
+                }else{
+                    alert("That's incorrect. Guess again");
+                } 
+                }
+            
+            if (gotIt == true){
+                alert("Congratulations! you guessed the correct number, which was" + " "+ num +" "+"and it took"+ " "+ counter + " "+
+                "guesses");
+            }else if(gotIt ==false){
+                alert("Try again");
+            }
 
         alert(num);
         //alert("is this working?");
